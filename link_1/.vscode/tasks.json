@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build Debug",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-DDEBUG",
+                "main.cpp",
+                "EthernetFrame.cpp",
+                "ARP.cpp",
+                "NetworkInterface.cpp",
+                "IP.cpp",
+                "DNSMessage.cpp",
+                "DNSClient.cpp",
+                "-o",
+                "main"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "编译调试模式"
+        },
+        {
+            "label": "build Release",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-O3",
+                "-DNDEBUG",
+                "main.cpp",
+                "EthernetFrame.cpp",
+                "ARP.cpp",
+                "NetworkInterface.cpp",
+                "IP.cpp",
+                "DNSMessage.cpp",
+                "DNSClient.cpp",
+                "-o",
+                "main"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "编译发布模式"
+        }
+    ]
+}
